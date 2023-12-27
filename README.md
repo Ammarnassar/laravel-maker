@@ -1,7 +1,7 @@
 # Laravel Maker: A Laravel Development Package for Creating Enums, Traits, Services Classes and more .
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/ammarnassar/laravel-maker.svg?style=flat-square)](https://packagist.org/packages/ammarnassar/laravel-maker)
-[![Total Downloads](https://img.shields.io/packagist/dt/ammarnassar/laravel-maker.svg?style=flat-square)](https://packagist.org/packages/ammarnassar/laravel-maker)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/ammaraldwayma/laravel-maker.svg?style=flat-square)](https://packagist.org/packages/ammaraldwayma/laravel-maker)
+[![Total Downloads](https://img.shields.io/packagist/dt/ammaraldwayma/laravel-maker.svg?style=flat-square)](https://packagist.org/packages/ammaraldwayma/laravel-maker)
 
 **Laravel Maker** is a powerful Laravel development package designed to help you to enhance your development process by
 creating Enums, Traits, Interfaces, Services and more classes with a single command.
