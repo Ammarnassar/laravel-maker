@@ -186,17 +186,18 @@ class GoogleTranslationService
 php artisan make:repo UserRepository
 ```
 
-This command will create a new repository class in the `app/Repositories` directory. The class will be
-named `UserRepository` and will contain the following code:
+This command will create a new repository class in the `app/Repositories` directory with a interface class in the
+`app/Repositories/Interfaces` directory. The class will be named `UserRepository` and will contain the following code:
 
 ```php
 <?php
 
 namespace App\Repositories;
 
+use App\Repositories\Interfaces\UserRepositoryInterface;
 use App\Models\User;
 
-class UserRepository
+class UserRepository implements UserRepositoryInterface
 {
     /**
      * @param User $user
