@@ -1,13 +1,6 @@
 # Laravel Maker: A Laravel Development Package for Creating Enums, Traits, Services Classes and more .
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/ammarnassar/laravel-maker.svg?style=flat-square)](https://packagist.org/packages/ammarnassar/laravel-maker)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/ammarnassar/laravel-maker/run-tests?label=tests&style=flat-square)](
-
-[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/ammarnassar/laravel-maker/run-tests?label=tests&style=flat-square)](
-
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/ammarnassar/laravel-maker.svg?style=flat-square)](https://packagist.org/packages/ammarnassar/laravel-maker)
-[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/ammarnassar/laravel-maker/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/ammarnassar/laravel-maker/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/ammarnassar/laravel-maker/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/ammarnassar/laravel-maker/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/ammarnassar/laravel-maker.svg?style=flat-square)](https://packagist.org/packages/ammarnassar/laravel-maker)
 
 **Laravel Maker** is a powerful Laravel development package designed to help you to enhance your development process by
