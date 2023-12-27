@@ -24,7 +24,7 @@ class LaravelMakerServiceProvider extends PackageServiceProvider
                 MakeInterfaceCommand::class,
                 MakeServiceCommand::class,
                 MakeRepositoryCommand::class,
-                MakeClassCommand::class
+                MakeClassCommand::class,
             ]);
     }
 }

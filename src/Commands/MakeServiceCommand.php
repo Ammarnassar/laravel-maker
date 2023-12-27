@@ -31,31 +31,26 @@ class MakeServiceCommand extends GeneratorCommand
     /**
      * Get the default namespace for the class.
      *
-     * @param string $rootNamespace
-     * @return string
+     * @param  string  $rootNamespace
      */
     protected function getDefaultNamespace($rootNamespace): string
     {
         $customNamespace = config('laravel-maker.default_namespaces.service');
 
-        return !is_null($customNamespace) ? $customNamespace : $rootNamespace . '\Services';
+        return ! is_null($customNamespace) ? $customNamespace : $rootNamespace.'\Services';
     }
 
     /**
      * Get the stub file for the generator.
-     *
-     * @return string
      */
     protected function getStub(): string
     {
-        return __DIR__ . '/../../stubs/service.stub';
+        return __DIR__.'/../../stubs/service.stub';
     }
 
     /**
      * Build the class with the given name.
      *
-     * @param $name
-     * @return array|string
      * @throws FileNotFoundException
      */
     protected function buildClass($name): array|string

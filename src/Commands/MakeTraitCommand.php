@@ -3,7 +3,6 @@
 namespace AmmarAldwayma\LaravelMaker\Commands;
 
 use Illuminate\Console\GeneratorCommand;
-use Illuminate\Contracts\Filesystem\FileNotFoundException;
 
 class MakeTraitCommand extends GeneratorCommand
 {
@@ -36,23 +35,20 @@ class MakeTraitCommand extends GeneratorCommand
     /**
      * Get the default namespace for the class.
      *
-     * @param string $rootNamespace
-     * @return string
+     * @param  string  $rootNamespace
      */
     protected function getDefaultNamespace($rootNamespace): string
     {
         $customNamespace = config('laravel-maker.default_namespaces.trait');
 
-        return !is_null($customNamespace) ? $customNamespace : $rootNamespace . '\Traits';
+        return ! is_null($customNamespace) ? $customNamespace : $rootNamespace.'\Traits';
     }
 
     /**
      * Get the stub file for the generator.
-     *
-     * @return string
      */
     protected function getStub(): string
     {
-        return __DIR__ . '/../../stubs/trait.stub';
+        return __DIR__.'/../../stubs/trait.stub';
     }
 }

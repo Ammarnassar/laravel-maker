@@ -2,9 +2,9 @@
 
 namespace AmmarAldwayma\LaravelMaker\Tests;
 
+use AmmarAldwayma\LaravelMaker\LaravelMakerServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use AmmarAldwayma\LaravelMaker\LaravelMakerServiceProvider;
 
 class TestCase extends Orchestra
 {

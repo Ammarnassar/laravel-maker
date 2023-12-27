@@ -36,31 +36,26 @@ class MakeEnumCommand extends GeneratorCommand
     /**
      * Get the default namespace for the class.
      *
-     * @param string $rootNamespace
-     * @return string
+     * @param  string  $rootNamespace
      */
     protected function getDefaultNamespace($rootNamespace): string
     {
         $customNamespace = config('laravel-maker.default_namespaces.enum');
 
-        return !is_null($customNamespace) ? $customNamespace : $rootNamespace . '\Enums';
+        return ! is_null($customNamespace) ? $customNamespace : $rootNamespace.'\Enums';
     }
 
     /**
      * Get the stub file for the generator.
-     *
-     * @return string
      */
     protected function getStub(): string
     {
-        return __DIR__ . '/../../stubs/enum.stub';
+        return __DIR__.'/../../stubs/enum.stub';
     }
 
     /**
      * Build the class with the given name.
      *
-     * @param $name
-     * @return array|string
      * @throws FileNotFoundException
      */
     protected function buildClass($name): array|string
