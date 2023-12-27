@@ -3,8 +3,17 @@
 namespace {{ namespace }};
 
 use {{ interfaceImport }};
+use {{ modelImport }};
 
 class {{ class }} implements {{ interface }}
 {
-    public string $model = {{ model }};
+    /**
+     * @param {{ modelClass }} {{ modelVariable }}
+     */
+    public function __construct(
+        protected {{ modelClass }} {{ modelVariable }},
+    )
+    {
+        //
+    }
 }

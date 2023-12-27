@@ -42,6 +42,8 @@ class MakeRepositoryCommand extends GeneratorCommand
 
     /**
      * Get the stub file for the generator.
+     *
+     * @return string
      */
     protected function getStub(): string
     {
@@ -51,6 +53,7 @@ class MakeRepositoryCommand extends GeneratorCommand
     /**
      * Handle the command.
      *
+     * @return bool|null
      * @throws FileNotFoundException
      */
     public function handle(): ?bool
@@ -68,6 +71,8 @@ class MakeRepositoryCommand extends GeneratorCommand
     /**
      * Build the class with the given name.
      *
+     * @param $name
+     * @return array|string
      * @throws FileNotFoundException
      */
     protected function buildClass($name): array|string
@@ -76,12 +81,15 @@ class MakeRepositoryCommand extends GeneratorCommand
 
         $model = str($this->qualifyModel($repositoryName))
             ->replaceLast('Repository', '')
+            ->basename()
             ->toString();
 
         $replace = [
-            '{{ model }}' => $model ? "$model::class" : 'null',
-            '{{ interface }}' => $repositoryName.'Interface',
-            '{{ interfaceImport }}' => $this->qualifyClass("Interfaces/$repositoryName".'Interface'),
+            '{{ modelClass }}' => $model,
+            '{{ modelVariable }}' => "$" . lcfirst($model),
+            '{{ modelImport }}' => $this->qualifyModel($model),
+            '{{ interface }}' => $repositoryName . 'Interface',
+            '{{ interfaceImport }}' => $this->qualifyClass("Interfaces/$repositoryName" . 'Interface'),
         ];
 
         return str_replace(
