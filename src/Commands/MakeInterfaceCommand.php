@@ -3,7 +3,6 @@
 namespace AmmarAldwayma\LaravelMaker\Commands;
 
 use Illuminate\Console\GeneratorCommand;
-use Illuminate\Contracts\Filesystem\FileNotFoundException;
 
 class MakeInterfaceCommand extends GeneratorCommand
 {
@@ -36,27 +35,24 @@ class MakeInterfaceCommand extends GeneratorCommand
     /**
      * Get the default namespace for the class.
      *
-     * @param string $rootNamespace
-     * @return string
+     * @param  string  $rootNamespace
      */
     protected function getDefaultNamespace($rootNamespace): string
     {
         if ($basePath = $this->argument('base')) {
-            return $rootNamespace . '\\' . $basePath;
+            return $rootNamespace.'\\'.$basePath;
         }
 
         $customNamespace = config('laravel-maker.default_namespaces.interface');
 
-        return !is_null($customNamespace) ? $customNamespace : $rootNamespace . '\Contracts';
+        return ! is_null($customNamespace) ? $customNamespace : $rootNamespace.'\Contracts';
     }
 
     /**
      * Get the stub file for the generator.
-     *
-     * @return string
      */
     protected function getStub(): string
     {
-        return __DIR__ . '/../../stubs/interface.stub';
+        return __DIR__.'/../../stubs/interface.stub';
     }
 }

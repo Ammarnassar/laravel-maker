@@ -31,35 +31,31 @@ class MakeRepositoryCommand extends GeneratorCommand
     /**
      * Get the default namespace for the class.
      *
-     * @param string $rootNamespace
-     * @return string
+     * @param  string  $rootNamespace
      */
     protected function getDefaultNamespace($rootNamespace): string
     {
         $customNamespace = config('laravel-maker.default_namespaces.repository');
 
-        return !is_null($customNamespace) ? $customNamespace : $rootNamespace . '\Repositories';
+        return ! is_null($customNamespace) ? $customNamespace : $rootNamespace.'\Repositories';
     }
 
     /**
      * Get the stub file for the generator.
-     *
-     * @return string
      */
     protected function getStub(): string
     {
-        return __DIR__ . '/../../stubs/repository.stub';
+        return __DIR__.'/../../stubs/repository.stub';
     }
 
     /**
      * Handle the command.
      *
-     * @return bool|null
      * @throws FileNotFoundException
      */
     public function handle(): ?bool
     {
-        $interfaceName = $this->argument('name') . 'Interface';
+        $interfaceName = $this->argument('name').'Interface';
 
         $this->call('make:interface', [
             'base' => 'Repositories/Interfaces',
@@ -72,8 +68,6 @@ class MakeRepositoryCommand extends GeneratorCommand
     /**
      * Build the class with the given name.
      *
-     * @param $name
-     * @return array|string
      * @throws FileNotFoundException
      */
     protected function buildClass($name): array|string
@@ -86,8 +80,8 @@ class MakeRepositoryCommand extends GeneratorCommand
 
         $replace = [
             '{{ model }}' => $model ? "$model::class" : 'null',
-            '{{ interface }}' => $repositoryName . 'Interface',
-            '{{ interfaceImport }}' => $this->qualifyClass("Interfaces/$repositoryName" . 'Interface'),
+            '{{ interface }}' => $repositoryName.'Interface',
+            '{{ interfaceImport }}' => $this->qualifyClass("Interfaces/$repositoryName".'Interface'),
         ];
 
         return str_replace(

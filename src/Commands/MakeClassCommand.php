@@ -34,11 +34,9 @@ class MakeClassCommand extends GeneratorCommand
 
     /**
      * Get the stub file for the generator.
-     *
-     * @return string
      */
     protected function getStub(): string
     {
-        return __DIR__ . '/../../stubs/class.stub';
+        return __DIR__.'/../../stubs/class.stub';
     }
 }
