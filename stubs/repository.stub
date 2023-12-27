@@ -1,0 +1,10 @@
+<?php
+
+namespace {{ namespace }};
+
+use {{ interfaceImport }};
+
+class {{ class }} implements {{ interface }}
+{
+    public string $model = {{ model }};
+}

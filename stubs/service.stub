@@ -1,0 +1,50 @@
+<?php
+
+namespace {{ namespace }};
+
+use Illuminate\Support\Facades\Http;
+use Illuminate\Http\Client\PendingRequest;
+
+class {{ class }}
+{
+    /**
+     * @param PendingRequest $httpClient
+     * @param array $serviceKeys
+     */
+    public function __construct(
+        protected PendingRequest $httpClient,
+        protected array          $serviceKeys = [],
+    )
+    {
+        $this->serviceKeys = config('services.{{ serviceConfigName }}');
+
+        $this->httpClient = Http::asJson()
+            ->acceptJson()
+            ->withoutVerifying()
+            ->baseUrl($this->serviceKeys['base_url'])
+            ->timeout($this->serviceKeys['timeout']);
+    }
+
+    /**
+     * Get {{ name }} data .
+     *
+     * @param array $data
+     * @return array
+     */
+    public function get(array $data = []): array
+    {
+        $response = $this->httpClient->get('/');
+
+        if ($response->failed()) {
+            return [
+                'status' => false,
+                'data'   => [],
+            ];
+        }
+
+        return [
+            'status' => true,
+            'data'   => $response->json(),
+        ];
+    }
+}
