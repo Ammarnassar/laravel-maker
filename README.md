@@ -4,10 +4,11 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/ammaraldwayma/laravel-maker.svg?style=flat-square)](https://packagist.org/packages/ammaraldwayma/laravel-maker)
 
 **Laravel Maker** is a powerful Laravel development package designed to help you to enhance your development process by
-creating Enums, Traits, Interfaces, Services and more classes with a single command.
+creating Classed , Enums, Traits, Interfaces, Services and more with a single command.
 
 With Laravel Maker you can create the following classes:
 
+- [Classes](#creating-a-new-class)
 - [Enums](#creating-a-new-enum)
 - [Traits](#creating-a-new-trait)
 - [Interfaces](#creating-a-new-interface)
@@ -23,6 +24,27 @@ composer require ammaraldwayma/laravel-maker --dev
 ```
 
 ## Usage
+
+### Creating a new Class
+
+```bash
+php artisan make:class Actions/StoreUserAction
+```
+
+This command will create a new class in the `app/Actions` directory. The class will be named `StoreUserAction` and will
+contain the following code:
+
+```php
+<?php
+
+namespace App\Actions;
+
+class StoreUserAction
+{
+    
+}
+```
+
 
 ### Creating a new Enum
 
